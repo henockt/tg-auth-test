@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { authHandler, AuthResp } from "../../utils/auth";
 import { type InitData } from "@tma.js/init-data-node";
 
-export function POST(request: NextRequest, response: NextResponse) {
-    const authResp: AuthResp = authHandler(request, response);
+export async function POST(request: NextRequest) {
+    const authResp: AuthResp = authHandler(request);
 
     if (authResp.authStatus !== 200) {
         return NextResponse.json({ error: authResp.error }, { status: authResp.authStatus });

@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextRequest } from 'next/server';
 import { validate, parse, type InitData } from '@tma.js/init-data-node';
 
 const token : string = process.env.BOT_TOKEN || '';
@@ -9,7 +9,7 @@ export interface AuthResp {
   userData?: InitData
 }
 
-export const authHandler: (request: NextRequest, response: NextResponse) => AuthResp = (request, response) => {
+export const authHandler: (request: NextRequest) => AuthResp = (request) => {
   const [authType, authData = ''] : string[] = (request.headers.get('authorization') || '').split(' ');
 
   if (authType === "tma") {

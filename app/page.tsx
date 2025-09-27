@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, CSSProperties } from "react";
 import { initData, retrieveRawInitData } from '@telegram-apps/sdk';
 
-const attr = {
+const attr: CSSProperties = {
   textAlign: "center",
   display: "flex",
   justifyContent: "center"
@@ -78,7 +78,7 @@ export default function Home() {
               width={20}
               height={20}
             />
-            Check on github
+            Check on GitHub
           </a>
         </div>
       </main>
