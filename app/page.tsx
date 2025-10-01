@@ -62,6 +62,7 @@ export default function Home() {
             <>
               <h2 style={attr}>Logged in as {userData.name}.</h2>
               <p>@{userData.username}</p>
+              <p>{userData.id}</p>
             </>
         }
 
